@@ -1,0 +1,307 @@
+/* ==========================================================
+   Variables CSS (R3)
+   ========================================================== */
+:root {
+  --color-fondo: #0f1923;
+  --color-superficie: #1b2836;
+  --color-borde: #2c3e50;
+  --color-texto: #e8eef2;
+  --color-texto-suave: #9fb3c2;
+  --color-primario: #97ce4c;      /* verde portal */
+  --color-primario-oscuro: #6fa32e;
+  --color-acento: #44b3c2;        /* celeste */
+  --color-error: #ff6b6b;
+  --color-aviso: #f0c929;
+
+  --espacio-xs: 0.25rem;
+  --espacio-s: 0.5rem;
+  --espacio-m: 1rem;
+  --espacio-l: 1.5rem;
+  --espacio-xl: 2.5rem;
+
+  --radio: 12px;
+  --sombra: 0 4px 14px rgba(0, 0, 0, 0.35);
+  --fuente: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --ancho-maximo: 1100px;
+}
+
+/* ==========================================================
+   Base
+   ========================================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--fuente);
+  line-height: 1.5;
+  color: var(--color-texto);
+  background-color: var(--color-fondo);
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+}
+
+/* ==========================================================
+   Encabezado con Flexbox (R2)
+   ========================================================== */
+.encabezado {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--espacio-s) var(--espacio-m);
+  padding: var(--espacio-m) var(--espacio-l);
+  background-color: var(--color-superficie);
+  border-bottom: 3px solid var(--color-primario);
+}
+
+.encabezado__marca {
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-s);
+}
+
+.encabezado__logo {
+  font-size: 2rem;
+}
+
+.encabezado__titulo {
+  margin: 0;
+  font-size: 1.5rem;
+  color: var(--color-primario);
+}
+
+.encabezado__subtitulo {
+  margin: 0;
+  color: var(--color-texto-suave);
+  font-size: 0.95rem;
+}
+
+/* ==========================================================
+   Contenido principal
+   ========================================================== */
+.contenido {
+  flex: 1;
+  width: 100%;
+  max-width: var(--ancho-maximo);
+  margin: 0 auto;
+  padding: var(--espacio-l) var(--espacio-m);
+}
+
+.buscador,
+.resultados {
+  margin-bottom: var(--espacio-xl);
+}
+
+.buscador__titulo,
+.resultados__titulo {
+  margin: 0 0 var(--espacio-m);
+  font-size: 1.25rem;
+}
+
+/* ---------- Formulario ---------- */
+.formulario {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: var(--espacio-m);
+  padding: var(--espacio-l);
+  background-color: var(--color-superficie);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio);
+}
+
+.formulario__campo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-xs);
+  flex: 1 1 220px;
+}
+
+.formulario__campo label {
+  font-weight: 600;
+  color: var(--color-texto-suave);
+}
+
+.formulario input,
+.formulario select {
+  width: 100%;
+  padding: var(--espacio-s) var(--espacio-m);
+  font: inherit;
+  color: var(--color-texto);
+  background-color: var(--color-fondo);
+  border: 1px solid var(--color-borde);
+  border-radius: 8px;
+}
+
+.formulario input:focus,
+.formulario select:focus {
+  outline: 2px solid var(--color-acento);
+  outline-offset: 1px;
+}
+
+.formulario__boton {
+  flex: 0 1 160px;
+  padding: var(--espacio-s) var(--espacio-l);
+  font: inherit;
+  font-weight: 700;
+  color: var(--color-fondo);
+  background-color: var(--color-primario);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.formulario__boton:hover {
+  background-color: var(--color-primario-oscuro);
+}
+
+.formulario__boton:focus-visible {
+  outline: 2px solid var(--color-acento);
+  outline-offset: 2px;
+}
+
+.formulario__boton:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+/* ---------- Mensajes de estado (R7) ---------- */
+.mensaje {
+  margin: 0 0 var(--espacio-m);
+  padding: var(--espacio-m);
+  border-left: 4px solid var(--color-acento);
+  border-radius: 6px;
+  background-color: var(--color-superficie);
+  color: var(--color-texto-suave);
+}
+
+.mensaje--cargando {
+  border-left-color: var(--color-acento);
+  color: var(--color-acento);
+}
+
+.mensaje--exito {
+  border-left-color: var(--color-primario);
+  color: var(--color-texto);
+}
+
+.mensaje--aviso {
+  border-left-color: var(--color-aviso);
+  color: var(--color-aviso);
+}
+
+.mensaje--error {
+  border-left-color: var(--color-error);
+  color: var(--color-error);
+}
+
+/* ==========================================================
+   Grilla de tarjetas con CSS Grid (R2)
+   ========================================================== */
+.grilla {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: var(--espacio-l);
+}
+
+.tarjeta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-s);
+  padding: var(--espacio-l);
+  background-color: var(--color-superficie);
+  border: 1px solid var(--color-borde);
+  border-top: 4px solid var(--color-primario);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
+  transition: transform 0.2s;
+}
+
+.tarjeta:hover {
+  transform: translateY(-4px);
+}
+
+.tarjeta__codigo {
+  align-self: flex-start;
+  padding: var(--espacio-xs) var(--espacio-s);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--color-fondo);
+  background-color: var(--color-acento);
+  border-radius: 999px;
+}
+
+.tarjeta__nombre {
+  margin: 0;
+  font-size: 1.15rem;
+  overflow-wrap: anywhere;
+}
+
+.tarjeta__datos {
+  margin: 0;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--espacio-xs) var(--espacio-s);
+  font-size: 0.95rem;
+}
+
+.tarjeta__datos dt {
+  color: var(--color-texto-suave);
+}
+
+.tarjeta__datos dd {
+  margin: 0;
+  text-align: right;
+}
+
+/* ==========================================================
+   Pie de página
+   ========================================================== */
+.pie {
+  padding: var(--espacio-m);
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--color-texto-suave);
+  background-color: var(--color-superficie);
+  border-top: 1px solid var(--color-borde);
+}
+
+.pie p {
+  margin: 0;
+}
+
+/* ==========================================================
+   Responsive: celulares (R3)
+   ========================================================== */
+@media (max-width: 600px) {
+  .encabezado {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: var(--espacio-m);
+  }
+
+  .encabezado__titulo {
+    font-size: 1.25rem;
+  }
+
+  .formulario {
+    padding: var(--espacio-m);
+  }
+
+  .formulario__boton {
+    flex-basis: 100%;
+  }
+}

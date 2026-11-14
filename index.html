@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Buscador de episodios de Rick and Morty usando su API REST.">
+  <title>Explorador de Episodios · Rick and Morty</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛸</text></svg>">
+  <link rel="stylesheet" href="css/estilos.css">
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <header class="encabezado">
+    <div class="encabezado__marca">
+      <span class="encabezado__logo" aria-hidden="true">🛸</span>
+      <h1 class="encabezado__titulo">Explorador de Episodios</h1>
+    </div>
+    <p class="encabezado__subtitulo">Datos de la API de Rick and Morty</p>
+  </header>
+
+  <main class="contenido">
+    <section class="buscador" aria-labelledby="titulo-buscador">
+      <h2 id="titulo-buscador" class="buscador__titulo">Buscar episodios</h2>
+
+      <form id="formulario-busqueda" class="formulario" novalidate>
+        <div class="formulario__campo">
+          <label for="campo-nombre">Nombre del episodio</label>
+          <input
+            type="text"
+            id="campo-nombre"
+            name="nombre"
+            placeholder="Ej.: Pilot, Rick, Morty…"
+            autocomplete="off"
+          >
+        </div>
+
+        <div class="formulario__campo">
+          <label for="campo-temporada">Temporada</label>
+          <select id="campo-temporada" name="temporada">
+            <option value="">Todas</option>
+            <option value="S01">S01</option>
+            <option value="S02">S02</option>
+            <option value="S03">S03</option>
+            <option value="S04">S04</option>
+            <option value="S05">S05</option>
+          </select>
+        </div>
+
+        <button type="submit" id="boton-buscar" class="formulario__boton">Buscar</button>
+      </form>
+    </section>
+
+    <section class="resultados" aria-labelledby="titulo-resultados">
+      <h2 id="titulo-resultados" class="resultados__titulo">Resultados</h2>
+      <p id="mensaje" class="mensaje" role="status" aria-live="polite">
+        Escribe un nombre o elige una temporada para empezar.
+      </p>
+      <div id="grilla-resultados" class="grilla"></div>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <p>Trabajo Práctico · Fundamentos de Desarrollo Web · Rocio Insaurralde · 2026</p>
+  </footer>
+</body>
+</html>
