@@ -123,9 +123,9 @@ const crearTarjeta = (episodio) => {
 
 // Arma el texto «Se encontraron N episodios» (aclara si la API mostró solo una parte).
 const crearTextoResumen = (total, mostrados) => {
-  const plural = total === 1 ? 'episodio' : 'episodios';
+  const encabezado = total === 1 ? 'Se encontró 1 episodio.' : `Se encontraron ${total} episodios.`;
   const aclaracion = mostrados < total ? ` Se muestran los primeros ${mostrados}.` : '';
-  return `Se encontraron ${total} ${plural}.${aclaracion}`;
+  return `${encabezado}${aclaracion}`;
 };
 
 // Dibuja todas las tarjetas en la grilla.
