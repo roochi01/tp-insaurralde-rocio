@@ -63,3 +63,11 @@ tp-insaurralde-rocio/
 
 Para probarla localmente basta con abrir `index.html` en el navegador (o usar una extensión
 como *Live Server*).
+
+## Cómo probar los estados
+
+- **Sin criterios:** presionar **Buscar** con los campos vacíos muestra un aviso y no hace la petición.
+- **Sin resultados:** buscar `zzzz` muestra «Sin resultados» (la API responde 404).
+- **Error de conexión:** en DevTools → Network elegir *Offline* y buscar: aparece un mensaje de error
+  y el botón vuelve a habilitarse.
+- **Persistencia:** buscar algo y recargar la página (F5): los campos se completan y la búsqueda se repite.
