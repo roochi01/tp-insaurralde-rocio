@@ -5,6 +5,7 @@ usando la [API REST pública de Rick and Morty](https://rickandmortyapi.com/docu
 rápidamente un episodio y ver su código, su fecha de emisión y cuántos personajes aparecen.
 
 **Autora:** Rocio Insaurralde · Fundamentos de Desarrollo Web · UCSA
+
 **Variante del TP:** C · Episodios (`https://rickandmortyapi.com/api/episode`)
 
 ## Sitios publicados
