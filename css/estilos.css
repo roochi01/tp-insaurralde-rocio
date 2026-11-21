@@ -283,6 +283,12 @@ h3 {
   margin: 0;
 }
 
+.pie .pie__version {
+  margin-top: var(--espacio-xs);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
 /* ==========================================================
    Responsive: celulares (R3)
    ========================================================== */
