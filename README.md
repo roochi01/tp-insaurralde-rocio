@@ -10,7 +10,7 @@ rápidamente un episodio y ver su código, su fecha de emisión y cuántos perso
 ## Sitios publicados
 
 - GitHub Pages: https://roochi01.github.io/tp-insaurralde-rocio/
-- Vercel: _se agrega al completar el despliegue_
+- Vercel: https://tp-insaurralde-rocio.vercel.app/
 - Repositorio: https://github.com/roochi01/tp-insaurralde-rocio
 
 ## Captura
